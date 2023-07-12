@@ -1,5 +1,2 @@
 #!/bin/bash
-water="$WATER"
-stir="$STIR"
-result=$(echo "ibase=water; obase=bestchol; $water + $stir" | bc)
-echo "The sum of WATER ($water) and STIR ($stir) in base bestchol is: $result"
+printf "%O\n" $((  $((5#(echo $WATER | tr water 01234))) + $((5#(echo $STIR | tr stir. 01234)))  )) | tr 01234567 bestchol
